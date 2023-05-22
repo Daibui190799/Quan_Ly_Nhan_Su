@@ -7565,9 +7565,10 @@ ul.comment-list li ul.children {
 	padding: 10px;
 	position: relative;
 	transition: all 0.2s ease-in-out;
+	border-color: #ccc
 }
 .card-file:hover, .card-file:focus {
-	border-color: #ccc;
+	border-color: #000;
 }
 .card-file .card-body {
 	padding: 15px 0 0;
