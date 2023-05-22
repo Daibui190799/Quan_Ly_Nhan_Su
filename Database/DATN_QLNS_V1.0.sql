@@ -3,118 +3,118 @@ USE DATN_QLNS;
 CREATE TABLE ACCOUNTS(
 	Username VARCHAR(30) PRIMARY KEY NOT NULL,
     Password VARCHAR(24) NOT NULL,
-    EmployeeId varchar(10) NOT NULL
+    EmployeeId VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE AUTHORITIES(
-	Id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    RoleId varchar(10) NOT NULL,
+	Id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    RoleId VARCHAR(10) NOT NULL,
     Username VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE ROLES(
-	RoleId varchar(10) PRIMARY KEY NOT NULL,
-    Name nvarchar(20) NOT NULL
+	RoleId VARCHAR(10) PRIMARY KEY NOT NULL,
+    Name VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE CERTIFICATES(
-	CertificateId varchar(30) PRIMARY KEY NOT NULL,
-    Name nvarchar(24) NOT NULL,
-    DateApprove date NOT NULL,
-    EmployeeId varchar(10) NOT NULL
+	CertificateId VARCHAR(30) PRIMARY KEY NOT NULL,
+    Name VARCHAR(24) NOT NULL,
+    DateApprove DATE NOT NULL,
+    EmployeeId VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE EDUCATION_PROGRAM_DETAILS(
-	Id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    EmployeeId varchar(10) NOT NULL,
-    EducationProgramId varchar(30) NOT NULL
+	Id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    EmployeeId VARCHAR(10) NOT NULL,
+    EducationProgramId VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE EDUCATION_PROGRAMS(
-	EducationProgramId varchar(30) PRIMARY KEY NOT NULL,
-    DateStart date NOT NULL,
-    DateEnd date NOT NULL,
-    Quantity int NOT NULL,
-    Name nvarchar(40) NOT NULL,
-    OfficeId varchar(20) NOT NULL
+	EducationProgramId VARCHAR(30) PRIMARY KEY NOT NULL,
+    DateStart DATE NOT NULL,
+    DateEnd DATE NOT NULL,
+    Quantity INT NOT NULL,
+    Name VARCHAR(40) NOT NULL,
+    OfficeId VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE EMPLOYEES(
-	EmployeeId varchar(10) PRIMARY KEY NOT NULL,
-    Position nvarchar(100) NOT NULL,
-    Fullname nvarchar(50) NOT NULL,
-    OfficeId varchar(20) NOT NULL,
-    DOB date NOT NULL,
-    Address nvarchar(70) NOT NULL,
-    Nationality nvarchar(50) NOT NULL,
-    DateEndJob date NULL,
-    DateStartJob date NOT NULL,
-    Gender bit NOT NULL,
-    Phone varchar(50) NOT NULL,
-    BankName varchar(100) NOT NULL,
-    BankNum varchar(20) NOT NULL,
-    Image nvarchar(100) NOT NULL,
-    Note nvarchar(100) NULL
+	EmployeeId VARCHAR(10) PRIMARY KEY NOT NULL,
+    Position VARCHAR(100) NOT NULL,
+    Fullname VARCHAR(50) NOT NULL,
+    OfficeId VARCHAR(20) NOT NULL,
+    DOB DATE NOT NULL,
+    Address VARCHAR(70) NOT NULL,
+    Nationality VARCHAR(50) NOT NULL,
+    DateEndJob DATE NULL,
+    DateStartJob DATE NOT NULL,
+    Gender BIT NOT NULL,
+    Phone VARCHAR(50) NOT NULL,
+    BankName VARCHAR(100) NOT NULL,
+    BankNum VARCHAR(20) NOT NULL,
+    Image VARCHAR(100) NOT NULL,
+    Note VARCHAR(100) NULL
 );
 
 CREATE TABLE RECRUIMENTS(
-	RecruitmentId int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    DateStart date NOT NULL,
-    DateEnd date NOT NULL,
-    Quantity int NOT NULL,
-    Description nvarchar(1000) NULL,
-    OfficeId varchar(20) NOT NULL
+	RecruitmentId INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    DateStart DATE NOT NULL,
+    DateEnd DATE NOT NULL,
+    Quantity INT NOT NULL,
+    Description VARCHAR(1000) NULL,
+    OfficeId VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE OFFICES(
-	OfficeId varchar(20) PRIMARY KEY NOT NULL,
-    Quantity int NOT NULL,
-    Description nvarchar(100) NULL,
-    Name nvarchar(100) NOT NULL
+	OfficeId VARCHAR(20) PRIMARY KEY NOT NULL,
+    Quantity INT NOT NULL,
+    Description VARCHAR(100) NULL,
+    Name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE CONTRACTS(
-	ContractId varchar(30) PRIMARY KEY NOT NULL,
-    Status varchar(24) NOT NULL,
-    Description nvarchar(100) NULL,
-    File nvarchar(100) NOT NULL,
-    DateStartContract date NOT NULL,
-    DateEndContract date NOT NULL,
-    Type nvarchar(100) NOT NULL,
-    SalaryId int NOT NULL,
-    EmployeeId varchar(10) NOT NULL
+	ContractId VARCHAR(30) PRIMARY KEY NOT NULL,
+    Status VARCHAR(24) NOT NULL,
+    Description VARCHAR(100) NULL,
+    File VARCHAR(100) NOT NULL,
+    DateStartContract DATE NOT NULL,
+    DateEndContract DATE NOT NULL,
+    Type VARCHAR(100) NOT NULL,
+    SalaryId INT NOT NULL,
+    EmployeeId VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE SALARIES(
-	SalaryId int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    BasicSalary float NOT NULL,
-    OfficialSalary float NOT NULL,
-    PaymentTime date NOT NULL,
-    SocialInsurance nvarchar(200) NOT NULL,
-    PaymentType nvarchar(100) NOT NULL
+	SalaryId INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    BasicSalary FLOAT NOT NULL,
+    OfficialSalary FLOAT NOT NULL,
+    PaymentTime DATE NOT NULL,
+    SocialInsurance VARCHAR(200) NOT NULL,
+    PaymentType VARCHAR(100) NOT NULL
 ); 
 
 CREATE TABLE LEAVES(
-	LeaveId int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    Type nvarchar(100) NOT NULL,
-    Available bit NOT NULL,
-    Reason nvarchar(1000) NULL,
-    Date date NOT NULL,
-    Approve bit NOT NULL,
-    EmployeeId varchar(10) NOT NULL
+	LeaveId INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    Type VARCHAR(100) NOT NULL,
+    Available BIT NOT NULL,
+    Reason VARCHAR(1000) NULL,
+    Date DATE NOT NULL,
+    Approve BIT NOT NULL,
+    EmployeeId VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE LEAVES_DETAIL(
-	LeaveDetailId int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    LeaveId int NOT NULL,
-    EmployeeId varchar(10) NOT NULL
+	LeaveDetailId INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    LeaveId INT NOT NULL,
+    EmployeeId VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE NOTIFICATIONS(
-	NotificationId int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    Title nvarchar(100) NOT NULL,
-    Type nvarchar(100) NOT NULL,
-    Description nvarchar(1000) NULL
+	NotificationId INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    Title VARCHAR(100) NOT NULL,
+    Type VARCHAR(100) NOT NULL,
+    Description VARCHAR(1000) NULL
 );
 
 -- DATA
